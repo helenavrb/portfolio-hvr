@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Quicksand:wght@300..700&family=Stack+Sans+Notch:wght@200..700&display=swap');
+
+:root {
+    --main-color: #0099ff;
+    --dark: #0d0d0d;
+    --black: #151515;
+    --light: #f0f0f0;
+    --color: #e0e0e0;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+header {
+    position: sticky;
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 10px;
+    z-index: 100;
+}
+
+#title {
+    background-color: var(--light);
+    font-family: "JetBrains Mono", monospace;
+    color: #0099ff;
+    padding: 50px;
+}
+
+#title h1 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: "Stack Sans Notch", sans-serif;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+.sidebar {
+    border: 1px solid var(--light);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    padding: 30px 20px;
+    min-height: 80%;
+    width: 15%;
+    z-index: 10;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.frame {
+    border: 1px solid var(--light);
+    font-family: "Quicksand", sans-serif;
+    padding: 20px;
+    width: 85%;
+    min-height: 80%;
+    z-index: 10;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.frame h2 {
+    text-transform: uppercase;
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container {
+    flex-wrap: wrap;
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 120px;
+    padding: 15px;
+    clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+}
+
+.box:hover {
+    background-color: var(--main-color);
+    transform: translateX(5px);
+}
+
+.box img {
+    width: 5rem;
+    aspect-ratio: 1;
+    margin-bottom: 5px;
+    filter: brightness(0) invert(1);
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.bar-track {
+  width: 100%;
+  height: 4px;
+  background: #222;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--main-color);
+  border-radius: 2px;
+  animation: load-bar 1.2s ease forwards;
+  width: 0;
+}
+
+@keyframes load-bar {
+  to { width: var(--target-width); }
+}
+
+.bar-info {
+  font-size: 9px;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.skill-row span {
+  width: 30px;
+  color: #aaa;
+}
+
+.skill-row .bar-track {
+  flex: 1;
+  margin: 0;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  background: transparent;
+  border: 1px solid #333;
+  color: #888;
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.contact-btn:hover {
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+
+.contact-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(500%) hue-rotate(170deg);
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px;
+}
+
+.activity-cell {
+  aspect-ratio: 1;
+  background: var(--main-color);
+  border-radius: 2px;
+}
+
+.project-card {
+  border: 1px solid #333;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+  display: flex;
+  gap: 24px;
+}
+
+.project-card:hover {
+  border-color: #0af;
+}
+
+.project-cover {
+  width: 200px;
+  min-height: 200px;
+  flex-shrink: 0;
+  background: #111;
+  border-right: 1px solid #333;
+  overflow: hidden;
+}
+
+.project-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  padding: 20px 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #555;
+}
+
+.project-status {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #0af;
+}
+
+.project-title {
+  font-size: 22px;
+  letter-spacing: 4px;
+  margin: 0;
+  color: #fff;
+}
+
+.project-subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #666;
+  margin: 0;
+}
+
+.project-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #aaa;
+  margin: 0;
+}
+
+.project-link {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #0af;
+  border: 1px solid #0af;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.project-link:hover {
+  background: #0af;
+  color: #000;
+}
+
+.project-kpis {
+    flex: 0 0 300px;
+    background: #0a0a0a;
+    border-left: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.kpi-block {
+    width: auto;
+    padding: 15px;
+    overflow: hidden;
+    border-bottom: 1px solid #1a1a1a;
+    flex: 1;
+}
+
+.kpi-block.border-top { border-top: 1px solid #222; }
+
+.kpi-name {
+    font-size: 8px;
+    color: var(--main-color);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.kpi-num {
+    font-size: 16px;
+    color: #fff;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.kpi-sub {
+    font-size: 8px;
+    color: #555;
+}
+
+.bar-mini-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar-mini-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.bar-src {
+  width: 46px;
+}
+
+.bar-mini-track {
+  flex: 1;
+  height: 3px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bar-mini-fill {
+  height: 100%;
+  background: var(--main-color);
+  border-radius: 2px;
+}
