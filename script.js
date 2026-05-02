@@ -39,6 +39,53 @@ const observer = new IntersectionObserver((entries) => {
 
 paragraphs.forEach(p => observer.observe(p));
 
+// atividade git
+
+const USERNAME = 'helenavrb';
+
+fetch(`https://github-contributions-api.jogruber.de/v4/${USERNAME}?y=last`)
+    .then(r => r.json())
+    .then(data => {
+        const contributions = data.contributions;
+        const total = data.total.lastYear;
+
+        const ghTotal = document.getElementById('gh-total');
+        ghTotal.dataset.pt = `${total} CONTRIBUIÇÕES NO ÚLTIMO ANO`;
+        ghTotal.dataset.en = `${total} CONTRIBUTIONS IN THE LAST YEAR`;
+        ghTotal.textContent = ghTotal.dataset.pt;
+
+        const graph = document.getElementById('gh-graph');
+        graph.style.cssText = 'display:grid; grid-template-columns: repeat(53, 1fr); gap: 2px; margin-top: 6px;';
+
+        contributions.forEach(day => {
+            const cell = document.createElement('div');
+            cell.style.cssText = `aspect-ratio:1; border-radius:2px; background:${getColor(day.level)};`;
+            cell.title = `${day.date}: ${day.count} contribuições`;
+            graph.appendChild(cell);
+        });
+    });
+
+function getColor(level) {
+    return ['#1a1a1a', '#0a3a5c', '#0a5a8c', '#0077cc', '#0099ff'][level];
+}
+
+// tradução
+
+function applyLang(lang) {
+    document.querySelectorAll('[data-pt]').forEach(el => {
+        el.textContent = el.dataset[lang];
+    });
+    document.documentElement.lang = lang === 'pt' ? 'pt-br' : 'en';
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyLang(btn.dataset.lang);
+    });
+});
+
 // arte generativa
 
 const canvas = document.getElementById('bg-sphere');

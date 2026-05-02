@@ -12,35 +12,61 @@
 
 <body>
     <header>
-        <h2 style="text-align: center;">Portfólio</h2>
+        <h2 style="text-align: center;" data-pt="PORTFÓLIO" data-en="PORTFOLIO">PORTFÓLIO</h2>
+        <div id="lang-switch">
+            <button class="lang-btn active" data-lang="pt">PT</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
     </header>
 
 <div id="title">
     <h1>HELENA VIDAL</h1>
-    <p>Desenvolvedora em formação - transformando ideias em interfaces.</p>
-    <p>Estudante de Análise e Desenvolvimento de Sistemas, trabalho na intersecção entre o código e a experiência do usuário: 
-        gosto de construir coisas que funcionam bem e que parecem certas para quem usar.</p>
-    <p>Tenho facilidade pra transitar entre a parte técnica e a visual — de otimizar lógica a criar sistemas de design consistentes do zero.</p>
+    <p data-pt="Desenvolvedora & UI/UX Designer - transformando ideias em interfaces." data-en="Developer & UI/UX Designer - turning ideas into interfaces.">
+        Desenvolvedora & UI/UX Designer - transformando ideias em interfaces.</p>
+    <p data-pt="Estudante de Análise e Desenvolvimento de Sistemas, trabalho na ponte entre código e experiência do usuário: gosto de construir coisas que funcionam bem e que parecem certas para quem usar." data-en="Systems Analysis and Development student working at the intersection of code and user experience: I like building things that work well and feel right for the people using them.">
+        Estudante de Análise e Desenvolvimento de Sistemas, trabalho na ponte entre código e experiência do usuário: gosto de construir coisas que funcionam bem e que parecem certas para quem usar.</p>
+    <p data-pt="Tenho facilidade pra transitar entre a parte técnica e a visual — desde otimizar lógica a criar sistemas de design consistentes do zero." data-en="I move easily between the technical and the visual — from optimizing logic to building consistent design systems from scratch.">
+        Tenho facilidade pra transitar entre a parte técnica e a visual — desde otimizar lógica a criar sistemas de design consistentes do zero.</p>
 </div>
 
 <div id="wrapper">
     <div class="sidebar">
-        <h2>Cursos</h2><br>
+        <h2 data-pt="Cursos" data-en="Courses">Cursos</h2><br>
         <div class="sidebar-section">
-            <span class="label">ADS — UNICESUMAR</span>
+            <span class="label">ADS</span>
             <div class="bar-track">
                 <div class="bar-fill" style="--target-width: 50%"></div>
             </div>
-            <span class="bar-info">3º SEMESTRE · ETA: 2027</span>
+            <span class="bar-info" data-pt="3º SEMESTRE · ETA: 2027 · UNICESUMAR" data-en="3RD SEMESTER · ETA: 2027 · UNICESUMAR">
+                3º SEMESTRE · ETA: 2027 · UNICESUMAR</span>
         </div>
         <div class="sidebar-section">
-            <span class="label">INGLÊS</span>
+            <span class="label">SQL</span>
+            <div class="bar-track">
+                <div class="bar-fill" style="--target-width: 1%"></div>
+            </div>
+            <span class="bar-info" data-pt="2026 · INSTITUIÇÃO FGV" data-en="2026 · FGV INSTITUTION">2026 · INSTITUIÇÃO FGV</span>
+        </div>
+        <div class="sidebar-section">
+            <span class="label">AWS EDUCATE</span>
+            <div class="bar-track">
+                <div class="bar-fill" style="--target-width: 1%"></div>
+            </div>
+            <span class="bar-info">2026 · AWS ACADEMY</span>
+        </div>
+        <div class="sidebar-section">
+            <span class="label" data-pt="SUPORTE TÉCNICO EM TI" data-en="IT TECHNICAL SUPPORT">SUPORTE TÉCNICO EM TI</span>
             <div class="bar-track">
                 <div class="bar-fill" style="--target-width: 100%"></div>
             </div>
-            <span class="bar-info">INTERMEDIÁRIO · B1</span>
+            <span class="bar-info" data-pt="2025 · CENTRO DE PESQUISA DELL" data-en="2025 · DELL RESEARCH CENTER">2025 · CENTRO DE PESQUISA DELL</span>
         </div>
-        <h2>Contatos</h2><br>
+        <h2>GitHub</h2><br>
+        <div class="sidebar-section">
+            <div id="gh-graph"></div>
+            <span class="bar-info" id="gh-total"></span>
+        </div>
+        <h2 data-pt="Contatos" data-en="Contacts">Contatos</h2><br>
         <a href="https://github.com/helenavrb" target="_blank" class="contact-btn">
             <img src="https://cdn.simpleicons.org/github/888888" width="14"> GITHUB </a>
         <a href="mailto:helenavidalrb@gmail.com" class="contact-btn">
@@ -52,7 +78,7 @@
     <div class="frame">
         <div class="main-container">
             <div class="skill-column">
-                <h2>Habilidades</h2>
+                <h2 data-pt="Habilidades" data-en="Skills">Habilidades</h2>
                 <div class="container">
                     <div class="box"><img src="assets/css3-icon.svg" alt="CSS"> CSS </div>
                     <div class="box"><img src="assets/html5-icon.svg" alt="HTML"> HTML </div>
@@ -60,79 +86,77 @@
                 </div>
             </div>
             <div class="skill-column">
-                <h2>Ferramentas</h2>
+                <h2 data-pt="Ferramentas" data-en="Tools">Ferramentas</h2>
                 <div class="container">
                     <div class="box"><img src="assets/affinity-icon.svg" alt="Affinity"> Affinity </div>
+                    <div class="box"><img src="assets/vscode-icon.svg" alt="VSCode" style="transform: scale(0.85);"> VS Code </div>
+                    <div class="box"><img src="assets/git-icon.svg" alt="GIT"> GIT </div>
                 </div>
             </div>
         </div>
         <br>
-        <h2>Projetos</h2>
+        <h2 data-pt="Projetos" data-en="Projects">Projetos</h2>
         <div class="project-card">
-    <div class="project-cover">
-        <img src="assets/cyber_shell.png" alt="Cyber Shell cover" />
-    </div>
+            <div class="project-cover">
+                <img src="assets/CYBER_SHELL.png">
+            </div>
     
-    <div class="project-content">
-        <div class="project-header">
-            <span class="project-tag">JAVASCRIPT · TWINE · SUGARCUBE</span>
-            <span class="project-status">PUBLICADO</span>
-        </div>
-        
-        <h3 class="project-title">FRAMEWORK SANDBOX</h3>
-        <p class="project-desc">
-            Engine experimental de simulação para ficção interativa em Twine —
-            desenvolvida para um nicho específico de criadores de jogos narrativos.
-            Inclui sistema de economia, ciclo dia/noite e rotinas de NPCs. <br>
-            Otimizada para projetos de grande escala e acompanhada de documentação técnica completa.
-        </p>
-        
-        <a href="https://minkmin.itch.io/cyber-shell-template" target="_blank" class="project-link"> VER NO ITCH.IO → </a>
-    </div>
-
-        <div class="project-kpis">
-            <div class="kpi-block">
-                <div class="label" style="color: var(--accent);">ENGAJAMENTO</div>
-                <div class="bar-track">
-                    <div class="bar-fill" style="--target-width: 34.4%"></div>
+            <div class="project-content">
+                <div class="project-header">
+                    <span class="project-tag">JAVASCRIPT · TWINE · SUGARCUBE</span>
+                    <span class="project-status" data-pt="PUBLICADO" data-en="PUBLISHED">PUBLICADO</span>
                 </div>
-                <div class="bar-info">34.4% jogaram o projeto</div>
-            </div>
+        
+                <h3 class="project-title">CYBER_SHELL: FRAMEWORK SANDBOX</h3>
+                    <p class="project-desc" data-pt="Engine de simulação para ficção interativa em Twine — desenvolvida para nicho de criadores de jogos narrativos, com ciclos de dia/noite, sistema de economia e rotinas de NPCs. Otimizada para projetos de grande escala e acompanhada de documentação técnica." data-en="A simulation engine for interactive fiction in Twine — built for a niche of narrative game creators, with day/night cycles, an economy system, and NPC routines. Optimized for large-scale projects and shipped with full technical documentation.">
+                        Engine de simulação para ficção interativa em Twine — desenvolvida para nicho de criadores de jogos narrativos, com ciclos de dia/noite, sistema de economia e rotinas de NPCs. Otimizada para projetos de grande escala e acompanhada de documentação técnica.</p>
+        
+            <a href="https://minkmin.itch.io/cyber-shell-template" target="_blank" class="project-link" data-pt="VER NO ITCH.IO →" data-en="VIEW ON ITCH.IO →">VER NO ITCH.IO →</a>
+        </div>
 
-            <div class="kpi-block">
-                <div class="label" style="color: var(--accent);">ALCANCE</div>
-                <div class="bar-info">8+ comunidades orgânicas</div>
-            </div>
+            <div class="project-kpis">
+                <div class="kpi-block">
+                    <div class="label" style="color: var(--accent);" data-pt="ALCANCE" data-en="REACH">ALCANCE</div>
+                    <div class="bar-info" data-pt="8+ comunidades orgânicas" data-en="8+ organic communities">8+ comunidades orgânicas</div>
+                </div>
 
-            <div class="kpi-block">
-                <div class="label" style="color: var(--accent);">TRÁFEGO</div>
-                <div class="bar-mini-wrap">
-                    <div class="bar-mini-row">
-                        <span class="label">Reddit</span>
-                        <div class="bar-mini-track"><div class="bar-fill" style="--target-width: 62%"></div></div>
-                        <span>34%</span>
+                <div class="kpi-block">
+                    <div class="label" style="color: var(--accent);" data-pt="ENGAJAMENTO" data-en="ENGAGEMENT">ENGAJAMENTO</div>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="--target-width: 34.4%"></div>
                     </div>
-                    <div class="bar-mini-row">
-                        <span class="label">Itch.io</span>
-                        <div class="bar-mini-track"><div class="bar-fill" style="--target-width: 27%"></div></div>
-                        <span>15%</span>
-                    </div>
-                    <div class="bar-mini-row">
-                        <span class="label">Tumblr</span>
-                        <div class="bar-mini-track"><div class="bar-fill" style="--target-width: 22%"></div></div>
-                        <span>12%</span>
+                    <div class="bar-info" data-pt="34.4% jogaram o projeto" data-en="34.4% played the project">34.4% jogaram o projeto</div>
+                </div>
+
+                <div class="kpi-block">
+                    <div class="label" style="color: var(--accent);" data-pt="TRÁFEGO" data-en="TRAFFIC">TRÁFEGO</div>
+                    <div class="bar-mini-wrap">
+                        <div class="bar-mini-row">
+                            <span class="label">Reddit</span>
+                            <div class="bar-mini-track"><div class="bar-fill" style="--target-width: 62%"></div></div>
+                            <span>34%</span>
+                        </div>
+                        <div class="bar-mini-row">
+                            <span class="label">Itch.io</span>
+                            <div class="bar-mini-track"><div class="bar-fill" style="--target-width: 27%"></div></div>
+                            <span>15%</span>
+                        </div>
+                        <div class="bar-mini-row">
+                            <span class="label">Tumblr</span>
+                            <div class="bar-mini-track"><div class="bar-fill" style="--target-width: 22%"></div></div>
+                            <span>12%</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div></div>
+</div>
 
 <div id="footer">
     <h1>MINKMIN</h1>
-    <p>Perfil criado para teste de rendimento de produtos digitais de nicho no mercado internacional. 
-        Os projetos lançados sob essa marca são puramente experimentais e servem como laboratório — 
-        do desenvolvimento à análise de métricas de produto.</p>
+    <p data-pt="Perfil criado para testes de rendimento de produtos digitais em nichos do mercado internacional. Os projetos lançados sob essa marca são puramente experimentais e servem como laboratório — do desenvolvimento à análise de métricas de produto." data-en="A profile created to test niche digital products in the international market. Projects launched under this brand are purely experimental and serve as a real-world lab — from development through product metrics analysis.">
+        Perfil criado para testes de rendimento de produtos digitais em nichos do mercado internacional. Os projetos lançados sob essa marca são puramente experimentais e servem como laboratório — do desenvolvimento à análise de métricas de produto.</p>
     <div class="footer-meta">
         <span>FORTALEZA · CE · BR</span>
         <span>HELENA VIDAL © 2026</span>
