@@ -86,11 +86,11 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
-// arte generativa
+// arte generativa esfera
 
 const canvas = document.getElementById('bg-sphere');
 const ctx = canvas.getContext('2d');
-const SIZE = 900;
+const SIZE = 1000;
 canvas.width = SIZE;
 canvas.height = SIZE;
 
@@ -160,3 +160,65 @@ function draw() {
 }
 
 draw();
+
+// projetos
+
+fetch('database.json')
+    .then(r => r.json())
+    .then(projects => {
+        const lang = document.querySelector('.lang-btn.active')?.dataset.lang || 'pt';
+        const container = document.getElementById('projects-container');
+
+        projects.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+
+            const cover = p.cover
+                ? `<div class="project-cover"><img src="${p.cover}" alt="${p.coverAlt}"></div>`
+                : '';
+
+            const kpis = p.kpis ? (() => {
+                const traffic = p.kpis.traffic?.length
+                    ? `<div class="kpi-block">
+                        <div class="label" style="color:var(--accent)" data-pt="TRÁFEGO" data-en="TRAFFIC">TRÁFEGO</div>
+                        <div class="bar-mini-wrap">
+                            ${p.kpis.traffic.map(t => `
+                            <div class="bar-mini-row">
+                                <span class="label">${t.source}</span>
+                                <div class="bar-mini-track"><div class="bar-fill" style="--target-width:${t.bar}%"></div></div>
+                                <span>${t.pct}</span>
+                            </div>`).join('')}
+                        </div>
+                    </div>`
+                    : '';
+
+                return `<div class="project-kpis">
+                    <div class="kpi-block">
+                        <div class="label" style="color:var(--accent)" data-pt="ALCANCE" data-en="REACH">ALCANCE</div>
+                        <div class="bar-info" data-pt="${p.kpis.reach.pt}" data-en="${p.kpis.reach.en}">${p.kpis.reach[lang]}</div>
+                    </div>
+                    <div class="kpi-block">
+                        <div class="label" style="color:var(--accent)" data-pt="ENGAJAMENTO" data-en="ENGAGEMENT">ENGAJAMENTO</div>
+                        <div class="bar-track"><div class="bar-fill" style="--target-width:${p.kpis.engagement.value}%"></div></div>
+                        <div class="bar-info" data-pt="${p.kpis.engagement.pt}" data-en="${p.kpis.engagement.en}">${p.kpis.engagement[lang]}</div>
+                    </div>
+                    ${traffic}
+                </div>`;
+            })() : '';
+
+            card.innerHTML = `
+                ${cover}
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-tag">${p.tags}</span>
+                        <span class="project-status" data-pt="${p.status.pt}" data-en="${p.status.en}">${p.status[lang]}</span>
+                    </div>
+                    <h3 class="project-title">${p.title}</h3>
+                    <p class="project-desc" data-pt="${p.desc.pt}" data-en="${p.desc.en}">${p.desc[lang]}</p>
+                    <a href="${p.link.url}" target="_blank" class="project-link" data-pt="${p.link.pt}" data-en="${p.link.en}">${p.link[lang]}</a>
+                </div>
+                ${kpis}`;
+
+            container.appendChild(card);
+        });
+    });

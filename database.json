@@ -1,0 +1,68 @@
+[
+  {
+    "id": "51cc1e07-6c29-4419-bd7a-da34534d1973",
+    "ref": 1,
+    "tags": "JAVASCRIPT · TWINE · SUGARCUBE",
+    "status": {
+      "pt": "PUBLICADO",
+      "en": "PUBLISHED"
+    },
+    "title": "CYBER_SHELL: FRAMEWORK SANDBOX",
+    "desc": {
+      "pt": "Engine de simulação para ficção interativa em Twine — desenvolvida para nicho de criadores de jogos narrativos, com ciclos de dia/noite, sistema de economia e rotinas de NPCs. Otimizada para projetos de grande escala e acompanhada de documentação técnica.",
+      "en": "A simulation engine for interactive fiction in Twine — built for a niche of narrative game creators, with day/night cycles, an economy system, and NPC routines. Optimized for large-scale projects and shipped with full technical documentation."
+    },
+    "link": {
+      "url": "https://minkmin.itch.io/cyber-shell-template",
+      "pt": "VER NO ITCH.IO →",
+      "en": "VIEW ON ITCH.IO →"
+    },
+    "kpis": {
+      "reach": {
+        "pt": "8+ comunidades orgânicas",
+        "en": "8+ organic communities"
+      },
+      "engagement": {
+        "value": 34.4,
+        "pt": "34.4% jogaram o projeto",
+        "en": "34.4% played the project"
+      },
+      "traffic": [
+        {
+          "source": "Reddit",
+          "bar": 62,
+          "pct": "34%"
+        },
+        {
+          "source": "Itch.io",
+          "bar": 27,
+          "pct": "15%"
+        },
+        {
+          "source": "Tumblr",
+          "bar": 22,
+          "pct": "12%"
+        }
+      ]
+    }
+  },
+  {
+    "id": "907fbceb-eb6a-4548-95a7-c5aa4031e480",
+    "ref": 2,
+    "tags": "JAVASCRIPT · NODE.JS",
+    "status": {
+      "pt": "PUBLICADO",
+      "en": "PUBLISHED"
+    },
+    "title": "JSON_NODE: CRUD BASE",
+    "desc": {
+      "pt": "Solução de persistência agnóstica e modular focada na experiência do desenvolvedor, projetada para ser incorporada em qualquer projeto Node.js sem dependências externas de servidor ou nuvem. O módulo abstrai a complexidade do gerenciamento de dados, processando inputs e gerando arquivos JSON estruturados via terminal.",
+      "en": "Agnostic and modular persistence solution focused on developer experience, designed to be embedded into any Node.js project without external server or cloud dependencies. The module abstracts data management complexity, processing inputs and outputting structured JSON files via terminal."
+    },
+    "link": {
+      "url": "https://github.com/helenavrb/crud-agnostic",
+      "pt": "VER NO GITHUB →",
+      "en": "VIEW ON GITHUB →"
+    }
+  }
+]
